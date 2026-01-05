@@ -21,7 +21,7 @@
 
 / { 
     behaviors {
-        mouse_scroll: mouse_scroll {
+        mouse_scroll_var: mouse_scroll_var {
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
             bindings = <&msc>, <&msc>;
@@ -95,8 +95,8 @@
             >;
 
             sensor-bindings =
-                <&mouse_scroll SCRL_RIGHT SCRL_LEFT>, // RE0(左): 時計回/右スクロール、反時計回/左スクロール
-                <&mouse_scroll SCRL_UP SCRL_DOWN>;    // RE1(右): 時計回/上スクロール、反時計回/下スクロール
+                <&mouse_scroll_var SCRL_RIGHT SCRL_LEFT>, // RE0(左): 時計回/右スクロール、反時計回/左スクロール
+                <&mouse_scroll_var SCRL_UP SCRL_DOWN>;    // RE1(右): 時計回/上スクロール、反時計回/下スクロール
 
                 //<&inc_dec_kp LC(MINUS) LC(EQUAL)>, // RE0: ctrl + - / +,,,
                 //<&inc_dec_kp C_VOL_DN C_VOL_UP>; // RE1: volume down/up
@@ -112,8 +112,8 @@
             >;
 
             sensor-bindings =
-                <&mouse_scroll SCRL_UP SCRL_DOWN>   , // RE1(右): 時計回/上スクロール、反時計回/下スクロール
-                <&mouse_scroll SCRL_RIGHT SCRL_LEFT>; // RE0(左): 時計回/右スクロール、反時計回/左スクロール
+                <&mouse_scroll_var SCRL_UP SCRL_DOWN>   , // RE1(右): 時計回/上スクロール、反時計回/下スクロール
+                <&mouse_scroll_var SCRL_RIGHT SCRL_LEFT>; // RE0(左): 時計回/右スクロール、反時計回/左スクロール
                 
                 //<&inc_dec_kp LC(MINUS) LC(EQUAL)>, // RE0: ctrl + - / +,,,
                 //<&inc_dec_kp C_VOL_DN C_VOL_UP>; // RE1: volume down/up
