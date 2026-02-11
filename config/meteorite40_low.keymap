@@ -25,6 +25,10 @@
     quick-tap-ms = <150>; // change 200 to 150
 };
 
+&mck_or_kp {
+    alt-cmd-tab = <&alt_cmd_tab>;
+};
+
 / {
     behaviors {
         mck_mt: mck_mt {
@@ -153,6 +157,4 @@
     };
 };
 
-&mck_or_kp {
-    alt-cmd-tab = <&alt_cmd_tab>;
-};
+
