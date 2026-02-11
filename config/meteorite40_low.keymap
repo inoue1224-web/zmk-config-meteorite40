@@ -54,7 +54,7 @@
             #binding-cells = <0>;
             bindings = <&mck M_OS_ALT_CMD>, <&kp TAB>;
             position-bindings = <12 13>; /* D, F */
-            position-binding-behaviors = <&kp LEFT>, <&kp RIGHT>;
+            position-binding-behaviors = <&kp LS(TAB)>, <&kp TAB>;
         };
     };
 
