@@ -1,4 +1,3 @@
-/*
 #if !defined(CONFIG_ZMK_USB_LOGGING) || !CONFIG_ZMK_USB_LOGGING
 &board_cdc_acm_uart {
     status = "disabled";
@@ -10,4 +9,3 @@
     };
 };
 #endif
-*/
