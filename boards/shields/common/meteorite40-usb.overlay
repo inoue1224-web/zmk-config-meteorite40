@@ -1,3 +1,4 @@
+/*
 &board_cdc_acm_uart {
     status = "disabled";
 };
@@ -11,3 +12,4 @@
         /delete-property/ zephyr,bt-c2h-uart;
     };
 };
+*/
