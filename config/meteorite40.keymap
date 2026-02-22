@@ -168,9 +168,9 @@
         layer_1 {
             display-name = "SYMBOLS";
             bindings = <
-&kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT  &none     &kp LPAR   &kp RPAR   &kp LBKT   &kp RBKT
-&kp CARET  &kp AMPS  &kp STAR  &kp BSLH  &kp PIPE   &kp SEMI  &kp COLON  &kp SQT    &kp DQT    &kp EQUAL
-&none      &none     &none     &none     &none      &mkp MB4  &mkp MB5   &kp GRAVE  &kp TILDE  &kp LBRC   &kp RBRC  &kp PLUS
+&kp EXCL   &kp JP_AT    &kp HASH  &kp DLLR  &kp PRCNT  &none     &kp JP_LPAREN   &kp JP_RPAREN   &kp JP_LBRACKET   &kp JP_RBRACKET
+&kp JP_CARET  &kp JP_AMPERSAND  &kp JP_ASTERISK  &kp JP_YEN  &kp JP_PIPE   &kp SEMI  &kp JP_COLON  &kp JP_QUOTE    &kp JP_DQUOTE    &kp JP_EQUAL
+&none      &none     &none     &none     &none      &mkp MB4  &mkp MB5   &kp JP_BACKQUOTE  &kp JP_TILDE  &kp JP_LBRACE   &kp JP_RBRACE  &kp JP_PLUS
 &trans     &trans    &trans    &trans    &trans     &trans    &kp DEL    &trans
             >;
 
