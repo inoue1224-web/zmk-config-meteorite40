@@ -158,7 +158,7 @@
         layer_2 {
             display-name = "NUM / ARROW";
             bindings = <
-                &kp JP_ASTRK     &kp N7     &kp N8     &kp N9     &kp JP_PLUS                     &none  &none     &none   &kp C_VOL_DN &kp C_VOL_UP
+                &kp JP_AT        &kp N7     &kp N8     &kp N9     &kp JP_PLUS                     &none  &none     &none   &kp C_VOL_DN &kp C_VOL_UP
                 &kp SLASH        &kp N4     &kp N5     &kp N6     &kp MINUS                       &none  &kp LEFT  &kp UP  &kp DOWN     &kp RIGHT
                 &kp N0           &kp N1     &kp N2     &kp N3     &kp DOT   &mkp MB4   &mkp MB5   &none  &none     &none   &none        &none
                                         &trans           &trans     &trans     &trans    &trans        &trans  &trans    &trans
