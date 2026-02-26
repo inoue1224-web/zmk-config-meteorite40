@@ -164,10 +164,10 @@
         win_default_layer {
             display-name = "BASE";
             bindings = <
-&kp Q         &kp W          &kp E             &kp R        &kp T        &kp Y       &kp U      &kp I     &kp O  &kp P
-&mt LSHIFT A  &kp S          &kp D             &kp F        &kp G        &kp H       &kp J      &kp K     &kp L  &kp MINUS
-&kp Z         &kp X          &kp C             &kp V        &kp B        &mkp MB1    &mkp MB2   &kp N     &kp M  &kp COMMA  &kp DOT  &lt 4 SLASH
-&kp LWIN      &mt LCTRL TAB  &mt LSHIFT SPACE  &lt 1 SPACE  &lt 2 ENTER  &lt 2 BSPC  &lt 3 DEL  &kp RALT
+&kp Q         &kp W          &kp E            &kp R        &kp T        &kp Y       &kp U      &kp I     &kp O  &kp P
+&mt LSHIFT A  &kp S          &kp D            &kp F        &kp G        &kp H       &kp J      &kp K     &kp L  &kp MINUS
+&kp Z         &kp X          &kp C            &kp V        &kp B        &mkp MB1    &mkp MB2   &kp N     &kp M  &kp COMMA  &kp DOT  &lt 4 SLASH
+&kp LWIN      &mt LSHFT TAB  &mt LCTRL SPACE  &lt 1 SPACE  &lt 2 ENTER  &lt 2 BSPC  &lt 3 DEL  &kp RALT
             >;
         };
 
@@ -184,10 +184,10 @@
         layer_2 {
             display-name = "NUM / ARROW";
             bindings = <
-&kp JP_AT  &kp N7  &kp N8  &kp N9  &kp JP_PLUS  &none     &none     &none   &kp C_VOL_DN  &kp C_VOL_UP
-&kp SLASH  &kp N4  &kp N5  &kp N6  &kp MINUS    &none     &kp LEFT  &kp UP  &kp DOWN      &kp RIGHT
-&kp N0     &kp N1  &kp N2  &kp N3  &kp DOT      &mkp MB4  &mkp MB5  &none   &none         &none         &none  &none
-&trans     &trans  &trans  &trans  &trans       &trans    &trans    &trans
+&kp JP_AT  &kp N7  &kp N8  &kp N9  &kp JP_PLUS  &kp LS(LG(S))            &kp LC(LS(ESC))  &kp K_MUTE  &kp C_VOL_DN  &kp C_VOL_UP
+&kp SLASH  &kp N4  &kp N5  &kp N6  &kp MINUS    &kp LG(LA(PRINTSCREEN))  &kp LEFT         &kp UP      &kp DOWN      &kp RIGHT
+&kp N0     &kp N1  &kp N2  &kp N3  &kp DOT      &mkp MB4                 &mkp MB5         &none       &none         &none         &none  &none
+&trans     &trans  &trans  &trans  &trans       &trans                   &trans           &trans
             >;
         };
 
@@ -196,7 +196,7 @@
             bindings = <
 &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6    &kp F7    &kp F8    &kp F9   &kp F10
 &none   &none   &none   &none   &none   &macro01  &macro02  &macro03  &kp F11  &kp F12
-&none   &none   &none   &none   &none   &none     &none     &none     &none    &none    &none  &none
+&none   &none   &none   &none   &none   &none     &none     &none     &none    &none    &none  &kp LG(TAB)
 &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans
             >;
         };
