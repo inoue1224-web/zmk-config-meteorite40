@@ -152,7 +152,7 @@
         macro03: macro03 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp D &kp E &kp V &kp N6 &kp N5 &kp N1 &kp N8 &kp N9 &kp N2 &kp N7 &kp S &kp R>;
+            bindings = <&none &kp D &kp E &kp V &kp N6 &kp N5 &kp N1 &kp N8 &kp N9 &kp N2 &kp N7 &kp S &kp R &kp TAB>;
             label = "MACRO03";
         };
     };
@@ -174,10 +174,10 @@
         layer_1 {
             display-name = "SYMBOLS";
             bindings = <
-&kp EXCL      &kp JP_AT         &kp HASH         &kp DLLR    &kp PRCNT    &none     &kp JP_LPAREN  &kp JP_RPAREN     &kp JP_LBRACKET  &kp JP_RBRACKET
-&kp JP_CARET  &kp JP_AMPERSAND  &kp JP_ASTERISK  &kp JP_YEN  &kp JP_PIPE  &kp SEMI  &kp JP_COLON   &kp JP_QUOTE      &kp JP_DQUOTE    &kp JP_EQUAL
-&none         &none             &none            &none       &none        &mkp MB4  &mkp MB5       &kp JP_BACKQUOTE  &kp JP_TILDE     &kp JP_LBRACE    &kp JP_RBRACE  &kp JP_PLUS
-&trans        &trans            &trans           &trans      &trans       &trans    &kp DEL        &trans
+&kp EXCL      &kp JP_AT         &kp HASH         &kp DLLR    &kp PRCNT    &kp BACKSLASH  &kp JP_LPAREN  &kp JP_RPAREN     &kp JP_LBRACKET  &kp JP_RBRACKET
+&kp JP_CARET  &kp JP_AMPERSAND  &kp JP_ASTERISK  &kp JP_YEN  &kp JP_PIPE  &kp SEMI       &kp JP_COLON   &kp JP_QUOTE      &kp JP_DQUOTE    &kp JP_EQUAL
+&none         &none             &none            &none       &none        &mkp MB4       &mkp MB5       &kp JP_BACKQUOTE  &kp JP_TILDE     &kp JP_LBRACE    &kp JP_RBRACE  &kp JP_PLUS
+&trans        &trans            &trans           &trans      &trans       &trans         &kp DEL        &trans
             >;
         };
 
