@@ -17,6 +17,30 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 200
 #include <dt-bindings/zmk/pointing.h>
 
+#define JP_DQUOTE       AT                // "
+#define JP_AMPERSAND    CARET             // &
+#define JP_QUOTE        AMPERSAND         // '
+#define JP_EQUAL        UNDER             // =
+#define JP_CARET        EQUAL             // ^
+#define JP_YEN          0x89              // ¥
+#define JP_PLUS         COLON             // +
+#define JP_TILDE        PLUS              // ~
+#define JP_PIPE         LS(0x89)          // |
+#define JP_AT           LEFT_BRACKET      // @
+#define JP_COLON        SINGLE_QUOTE      // :
+#define JP_ASTERISK     DOUBLE_QUOTES     // *
+#define JP_BACKQUOTE    LEFT_BRACE        // `
+#define JP_UNDERSCORE   LS(0x87)          // _
+#define JP_LBRACKET     RIGHT_BRACKET     // [
+#define JP_RBRACKET     BACKSLASH         // ]
+#define JP_LPAREN       ASTERISK          // (
+#define JP_RPAREN       LEFT_PARENTHESIS  // )
+#define JP_LBRACE       RIGHT_BRACE       // {
+#define JP_RBRACE       PIPE              // }
+#define JP_KANA         LANGUAGE_1        // かな
+#define JP_EISU         LANGUAGE_2        // 英数
+#define JP_HANZEN       GRAVE             // 半角/全角
+
 &mt { 
     flavor = "tap-preferred"; // change hold to tap
     tapping-term-ms = <200>;
@@ -134,6 +158,29 @@
         };
     };
 
+    macros {
+        macro01: macro01 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp S &kp U &kp N &kp T &kp A &kp I &kp NUMBER_0 &kp NUMBER_1 &kp TAB>;
+            label = "MACRO01";
+        };
+
+        macro02: macro02 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(B) &kp NUMBER_5 &kp NUMBER_5 &kp E &kp NUMBER_5 &kp C &kp B &kp C &kp NUMBER_2 &kp NUMBER_1>;
+            label = "MACRO02";
+        };
+
+        macro03: macro03 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(C) &kp N &kp J &kp S &kp T &kp NUMBER_8 &kp NUMBER_8 &kp NUMBER_7 &kp NUMBER_6 &kp NUMBER_5 &kp NUMBER_4 &kp NUMBER_3>;
+            label = "MACRO03";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
         layout = &LAYOUT_2U_SPACE;
@@ -141,10 +188,10 @@
         win_default_layer {
             display-name = "BASE";
             bindings = <
-                &kp Q        &kp W       &kp E        &kp R        &kp T                                 &kp Y        &kp U       &kp I       &kp O  &kp P
-                &mt LSHIFT A &kp S       &kp D        &kp F        &kp G                                 &kp H        &kp J       &kp K       &kp L  &kp MINUS
-                &kp Z        &kp X       &kp C        &kp V        &kp B        &mkp MB1     &mkp MB2    &kp N        &kp M       &kp COMMA   &kp DOT  &lt 4 SLASH
-                                    &kp LWIN  &mt LCTRL TAB  &mt LSHIFT SPACE  &lt 1 SPACE  &lt 1 ENTER  &lt 2 ENTER  &lt 3 BSPC  &kp RALT
+&kp Q     &kp W          &kp E            &kp R        &kp T       &kp Y        &kp U          &kp I     &kp O  &mt BACKSPACE P
+&kp A     &kp S          &kp D            &kp F        &kp G       &kp H        &kp J          &kp K     &kp L  &kp MINUS
+&kp Z     &kp X          &kp C            &kp V        &kp B       &mkp MB1     &mkp MB2       &kp N     &kp M  &kp COMMA        &kp DOT  &lt 4 SLASH
+&kp LWIN  &mt LS                  &kp LWIN  &mt LCTRL TAB  &mt LSHIFT SPACE  &lt 1 SPACE  &lt 1 ENTER  &lt 2 ENTER  &lt 3 BSPC  &kp RALT
             >;
 
             sensor-bindings =
@@ -155,10 +202,10 @@
         layer_1 {
             display-name = "SYMBOLS";
             bindings = <
-                &kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT                       &none      &kp LPAR   &kp RPAR   &kp LBKT   &kp RBKT
-                &kp CARET  &kp AMPS  &kp STAR  &kp BSLH  &kp PIPE                        &kp SEMI   &kp COLON  &kp SQT    &kp DQT    &kp EQUAL
-                &none      &none     &none     &none     &none      &mkp MB4  &mkp MB5   &kp GRAVE  &kp TILDE  &kp LBRC   &kp RBRC   &kp PLUS
-                                     &trans     &trans    &trans    &trans    &trans     &trans    &kp DEL     &trans
+&kp EXCL      &kp JP_AT         &kp HASH         &kp DLLR    &kp PRCNT    &kp JP_UNDERSCORE  &kp JP_LPAREN  &kp JP_RPAREN     &kp JP_LBRACKET  &kp JP_RBRACKET
+&kp JP_CARET  &kp JP_AMPERSAND  &kp JP_ASTERISK  &kp JP_YEN  &kp JP_PIPE  &kp SEMI           &kp JP_COLON   &kp JP_QUOTE      &kp JP_DQUOTE    &kp JP_EQUAL
+&none         &none             &none            &none       &none        &mkp MB4           &mkp MB5       &kp JP_BACKQUOTE  &kp JP_TILDE     &kp JP_LBRACE    &kp JP_RBRACE  &kp JP_PLUS
+&trans        &trans            &trans           &trans      &trans       &trans             &kp DEL        &trans
             >;
 
             sensor-bindings =
@@ -169,11 +216,12 @@
         layer_2 {
             display-name = "NUM / ARROW";
             bindings = <
-                &kp ASTRK        &kp N7     &kp N8     &kp N9     &kp PLUS                        &kp LG(LS(S)) &kp LC(MINUS) &kp LC(EQUAL) &kp C_VOL_DN &kp C_VOL_UP
-                &kp SLASH        &kp N4     &kp N5     &kp N6     &kp MINUS                       &none         &kp LEFT      &kp UP        &kp DOWN     &kp RIGHT
-                &kp N0           &kp N1     &kp N2     &kp N3     &kp DOT   &mkp MB4   &mkp MB5   &none         &kp LG(LEFT)  &kp LG(UP)    &kp LG(DOWN) &kp LG(RIGHT)
-                                        &trans           &trans     &trans     &trans    &trans        &trans  &trans    &trans
+&kp JP_AT  &kp N7  &kp N8  &kp N9  &kp JP_PLUS  &kp LS(LG(S))            &kp LC(LS(ESC))  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP
+&kp SLASH  &kp N4  &kp N5  &kp N6  &kp MINUS    &kp LG(LA(PRINTSCREEN))  &kp LEFT         &kp UP      &kp DOWN      &kp RIGHT
+&kp N0     &kp N1  &kp N2  &kp N3  &kp DOT      &mkp MB4                 &mkp MB5         &none       &none         &none         &none  &none
+&trans     &trans  &trans  &trans  &trans       &trans                   &trans           &trans
             >;
+
 
             sensor-bindings =
                 <&enc_kp C_VOL_DN C_VOL_UP>,
@@ -183,11 +231,12 @@
 
         layer_3 {
             display-name = "FUNCTION";
+            display-name = "FUNCTION";
             bindings = <
-                &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-                &none   &none   &none   &none   &none                   &none   &none   &none   &none   &none
-                &none   &none   &none   &none   &none   &none   &none   &none   &none   &none    &none  &none
-                                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp F1  &kp F2  &kp F3    &kp F4    &kp F5     &kp F6    &kp F7    &kp F8       &kp F9       &kp F10
+&none   &none   &none     &kp UP    &none      &macro01  &macro02  &macro03     &kp F11      &kp F12
+&none   &none   &kp LEFT  &kp DOWN  &kp RIGHT  &none     &none     &kp LG(TAB)  &kp LA(ESC)  &none    &none  &none
+&trans  &trans  &trans    &trans    &trans     &trans    &trans    &trans
             >;
 
             sensor-bindings =
@@ -196,13 +245,12 @@
 
         };
         layer_4 {
-			display-name = "SETTING";
 			bindings = <
-				&studio_bt      &none           &none            &none            &none                     &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-				&none           &none           &none            &none            &none                &bt BT_CLR     &bt BT_CLR_ALL  &none         &none         &none
-				&none           &none           &none           &none             &none                   &none  &none  &bootloader    &none         &none         &none         &none
-												                            &trans       &trans  &trans  &trans  &trans  &trans    &trans        &trans
-			>;
+&ccfg C_CPI_DN   &ccfg C_CPI_UP   &ccfg C_ROT_DN    &ccfg C_ROT_UP    &ccfg C_SCALE_TOG       &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&ccfg C_SDIV_DN  &ccfg C_SDIV_UP  &ccfg C_SCRH_TOG  &ccfg C_SCRV_TOG  &ccfg C_SCRL_SCALE_TOG  &bt BT_CLR    &bt BT_CLR_ALL  &none         &none         &none
+&ccfg C_SAVE     &ccfg C_RESET    &none             &none             &ccfg C_SCRL2_UP        &none         &none           &bootloader   &none         &none         &none  &none
+&trans           &trans           &trans            &trans            &trans                  &trans        &trans          &trans
+            >;
 
             sensor-bindings =
                 <&enc_kp C_VOL_DN C_VOL_UP>,
